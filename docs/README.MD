@@ -8,7 +8,7 @@ compliance of the medication user (MU).  For eaxmple, an older person may requir
 2. Family members or friends of a medication user are also targeted. Based on the severity of the person's compliance with their medication(s), family members or friends can configure and miantain the configuration for them.  For eaxmple, an older person may require a friend or family member to administer the configuration.
 
 **High level story** 
-
+Do you know anyone that has issues complying with their medication schedule, either themselves or for a friend/family member?
 
 **Outline of the content**
 
