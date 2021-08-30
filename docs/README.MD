@@ -19,7 +19,10 @@ A home page will provide a brief description of the application and its applicab
 2. Medications:
 A medication page will list all the medications a person takes.  It will store the medication name including its strength and dosage form.
 
-3. Schedule:
+3. Take Your Medications Page:
+A page that the medication user uses to mark medications as taken or not.
+
+5. Schedule:
 A scheduling page will list each medication along with the number of doses and when its supposed to be taken (Morning, Afternoon, Evening).
 
 4. Contacts:
@@ -80,5 +83,5 @@ The header and footer will appear on each page.
 
 **Third party APIs**
 
-The API’s are from https://rxnav.nlm.nih.gov/index.html.
+The free API’s are from https://rxnav.nlm.nih.gov/index.html.
 
