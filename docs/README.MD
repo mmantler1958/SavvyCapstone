@@ -29,9 +29,12 @@ A contacts page will allow entry of contact information (name/phone/email,contac
 If time permits, a page will be added that will summarize any drug interactions amongst the current medications.
 
 **User Flow**
-1. Their are two types of roles; View Only (VO) and Administrator (ADM).
-2. Administrator:  The administator will maintain the mediciations list and schedule.
-3. View Only:  The view only role will alow view only of any and all data in the application.
+1. Their are three types of roles; View Only (VO), Medication User (MU) and Administrator (ADM).
+     Administrator:  The administator will maintain the mediciations list and schedule.
+     View Only:  The view only role will alow view only of any and all data in the application.
+     Medication User:  This rolw is for the person taking the medication to mark their medication as taken or not.
+![image](https://user-images.githubusercontent.com/38501742/131365244-bfc9ee73-fc11-41d2-b0cb-af781bcea645.png)
+
 
 **Wireframes**  
 
