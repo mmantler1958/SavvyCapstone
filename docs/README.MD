@@ -39,11 +39,33 @@ If time permits, a page will be added that will summarize any drug interactions 
 ![image](https://user-images.githubusercontent.com/38501742/131372095-f396b65b-6a9a-4f3f-8943-20f7ec71d92e.png)
 
 ![image](https://user-images.githubusercontent.com/38501742/131372168-e9009452-8b85-43d2-8212-039be19deedf.png)
+ 
+**SWOT Analysis**
+
+**Strengths**
+100% freeware.
+Does the basic functions of a tracking application.
+Simple to use interface.
+Allows exposure of your compliance to a friend or family member so they can assist with you medication regimen.
+
+**Weaknesses**
+Some notification mechanisms may not be available that are free to use.
+A full HIPPA analysis was not performed.
 
 
+**Opportunities**
+Integration with IOT such as smart watches so that a person can be notifed in real time easily...vibration, beeps etc.
+QR Code generator to a manufacturer of medical wearables such as necklaces and bracelets that have a QR code on them for emergency responders can scan and know what medications the person is on.
+Addition of a person's medical conditions.
+Addition of a person's allergies.
+Addition of the adresss of a person's pharmacy information.
+Addtion of a person's doctor information.
+Addition of the ability to provide a medication price comparision summary against other providers using GoodRX API's. 
 
-**Wireframes**  
-
+**Threats**
+Unable to get notifications to work or find free API's
+Feature set may not be as good as a paid application.
+Ability to complete project in time alloted.
 
 **Color pallet**
 The color palette is blue, white, black. Hex values yet to be documented
