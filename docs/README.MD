@@ -1,8 +1,8 @@
 **Definition**  
 
 For my full stack capstone project at Savvy Coders, I would like to create a web application that will assist a person with complying to their medication regimen.
-It will have the ability for the medication user to configure their regimen or by a person's friend or family member.  This allows flexibility of implementation based on the 
-compliance of the medication user (MU).  For eaxmple, an older person may require a friend or family member to administer the configuration.
+It will have the ability for the medication user (MU) to configure their own regimen or by their friend or family member.  This allows flexibility of implementation based on the 
+historical compliance record of the MU.  For example, an older person may require a friend or family member to administer the application for the MU..
 
 **Audience**
 1. A medication user that has issues remembering to take their medications on time or at all. In this case the medication user will configure the regimen themselves.
