@@ -33,7 +33,13 @@ If time permits, a page will be added that will summarize any drug interactions 
      Administrator:  The administator will maintain the mediciations list and schedule.
      View Only:  The view only role will alow view only of any and all data in the application.
      Medication User:  This rolw is for the person taking the medication to mark their medication as taken or not.
-![image](https://user-images.githubusercontent.com/38501742/131365244-bfc9ee73-fc11-41d2-b0cb-af781bcea645.png)
+
+![image](https://user-images.githubusercontent.com/38501742/131371984-537d2139-34bf-47c1-adf2-7ba923f506a6.png)
+
+![image](https://user-images.githubusercontent.com/38501742/131372095-f396b65b-6a9a-4f3f-8943-20f7ec71d92e.png)
+
+![image](https://user-images.githubusercontent.com/38501742/131372168-e9009452-8b85-43d2-8212-039be19deedf.png)
+
 
 
 **Wireframes**  
