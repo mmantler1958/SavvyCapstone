@@ -49,4 +49,5 @@ The header and footer will appear on each page.
 
 **Third party APIs**
 
+The API’s are from https://rxnav.nlm.nih.gov/index.html.
 
