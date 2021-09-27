@@ -89,7 +89,7 @@ footer a {
     display: block;
     color: rgb(8, 141, 141);
   }
-  .menu {
+  .nav-links {
     flex-direction: column;
   }
   .hidden--mobile {
