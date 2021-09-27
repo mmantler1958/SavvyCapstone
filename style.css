@@ -83,16 +83,28 @@ footer a {
 #bar {
   display: none;
 }
+h1 {
+  margin-left: 10px;
+  color: rgb(8, 141, 141);
+  display: block;
+}
 @media (max-width: 414px) {
   #bar {
     font-size: 30px;
-    display: block;
+    display: inline-block;
     color: rgb(8, 141, 141);
+    padding: 10px;
   }
   .nav-links {
     flex-direction: column;
   }
   .hidden--mobile {
     display: none;
+  }
+  .logo {
+    display: inline-block;
+    color: rgb(8, 141, 141);
+    font-size: 30px;
+    padding: 15px;
   }
 }
