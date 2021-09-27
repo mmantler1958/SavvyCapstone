@@ -11,7 +11,7 @@
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-prettier": "^3.3.1",
-    "prettier": "1.19.1",
+    "prettier": "^1.19.1",
     "stylelint": "^13.11.0",
     "stylelint-config-prettier": "^6.0.0",
     "stylelint-config-recommended": "^3.0.0",
@@ -20,6 +20,6 @@
   },
   "dependencies": {
     "node": "^15.8.0",
-    "yargs-parser": ">=13.1.2"    
+    "yargs-parser": ">=13.1.2"
   }
 }
