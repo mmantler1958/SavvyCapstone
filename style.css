@@ -27,7 +27,14 @@ ul {
   margin: 25px;
   padding: 0px;
 }
-
+.logo {
+  color: rgb(8, 141, 141);
+  font-size: 40px;
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+}
 nav li {
 }
 .nav-links {
@@ -43,6 +50,10 @@ nav li a:hover {
   border: 1px solid rgb(8, 141, 141);
   /* text-decoration: underline; */
 }
+#contactUs {
+  display: none;
+}
+
 nav a {
   text-decoration: none;
   color: rgb(8, 141, 141);
@@ -91,7 +102,7 @@ h1 {
 @media (max-width: 414px) {
   #bar {
     font-size: 30px;
-    display: inline-block;
+    display: block;
     color: rgb(8, 141, 141);
     padding: 10px;
   }
@@ -102,9 +113,12 @@ h1 {
     display: none;
   }
   .logo {
-    display: inline-block;
+    display: flex;
     color: rgb(8, 141, 141);
-    font-size: 30px;
-    padding: 15px;
+    font-size: 40px;
+
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
   }
 }
