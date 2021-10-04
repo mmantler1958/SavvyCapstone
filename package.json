@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "parcel-build": "parcel build index.html && cp _redirects ./dist/",
+    "serve": "parcel index.html"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -19,7 +22,9 @@
     "stylelint-vscode": "^7.0.0-6"
   },
   "dependencies": {
+    "navigo": "^7.1.3",
     "node": "^15.8.0",
+    "parcel-bundler": "^1.12.5",
     "yargs-parser": ">=13.1.2"
   }
 }
