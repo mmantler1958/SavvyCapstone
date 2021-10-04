@@ -1,6 +1,6 @@
 export default links => `
 <nav>
-    <i class="fas fa-bars"></i>
+    <i class="fa-bars"></i>
     <ul class="hidden--mobile nav-links">
       ${links
         .map(
@@ -8,5 +8,5 @@ export default links => `
             `<li><a href="/${el.title}" title="${el.title}" data-navigo>${el.text}</a></li>`
         )
         .join("")}
-   </ul>
+    </ul>
   </nav>`;
