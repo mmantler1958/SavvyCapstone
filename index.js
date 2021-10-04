@@ -1,11 +1,11 @@
 import { Footer, Main, Nav } from "./components";
 import * as state from "./store";
 import Navigo from "navigo";
-import capitalize from "lodash";
+import { capitalize } from "lodash";
 
 const router = new Navigo(window.location.origin);
 console.log(state);
-// router.on("/", () => render(state.Home)).resolve();
+router.on("/", () => render(state.Home)).resolve();
 router
   .on({
     "/": () => render(state.Home),
@@ -15,16 +15,15 @@ router
     }
   })
   .resolve();
-function render(state) {
+function render(st) {
   document.querySelector("#root").innerHTML = `
 
   ${Nav(state.Links)}
-  ${Main(state.Home)}
+  ${Main(st)}
   ${Footer()}
   `;
   // router.updatePageLinks();
 }
-render(state);
 
 document.querySelector(".fa-bars").addEventListener("click", () => {
   document.querySelector("nav > ul").classList.toggle("hidden--mobile");
