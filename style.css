@@ -1,0 +1,149 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+}
+.burger-color {
+  color: teal;
+}
+/* header {
+  font-weight:bold;
+  font-size: 32px;
+
+} */
+nav {
+  /* font-size: 18px;
+  display: flex;
+  flex-flow: row; */
+}
+
+ul {
+  list-style-type: none;
+  margin: 25px;
+  padding: 0px;
+}
+.logo {
+  color: rgb(8, 141, 141);
+  font-size: 40px;
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+}
+nav li {
+}
+.nav-links {
+  display: flex;
+  font-size: 30px;
+  flex-direction: row;
+  justify-content: center;
+  font-weight: bold;
+  gap: 15px;
+}
+
+nav li a:hover {
+  border: 1px solid rgb(8, 141, 141);
+  /* text-decoration: underline; */
+}
+form {
+}
+#contactUs {
+  border: 2px solid teal;
+  width: 50%;
+}
+#contactUs * {
+  /* display: none; */
+  display: block;
+
+  width: 50%;
+  /* margin: auto; */
+
+  font-size: 30px;
+  color: rgb(8, 141, 141);
+}
+
+nav a {
+  text-decoration: none;
+  color: rgb(8, 141, 141);
+}
+nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.foot a {
+   text-decoration: none;
+  color: rgb(8, 141, 141);
+}
+.foot a:hover {
+  text-decoration: underline;
+}
+.foot{
+  position: fixed;
+  width: 100%;
+/* margin:auto; */
+text-align: center;
+  bottom: 10px;
+  border: 2px solid rgb(8, 141, 141);
+  /* width: 100%;
+  margin: 0 auto; */
+
+  font-size: 18px;
+  /* display: flex; */
+  /* flex-direction: row; */
+  /* justify-content: center; */
+  /* justify-content: space-between; */
+  /* gap: 20px; */
+
+  font-size: 30px;
+}
+.toggle {
+  display: none;
+  color: rgb(8, 141, 141);
+  font-size: 30px;
+}
+
+
+
+
+h1 {
+  margin-left: 10px;
+  color: rgb(8, 141, 141);
+  display: block;
+}
+.fa-bars {
+  display: none;
+}
+.home {
+max-height: 83vh;
+overflow: auto;
+}
+@media (max-width: 414px) {
+  .fa-bars {
+
+    font-size: 30px;
+    display: block;
+    color: rgb(8, 141, 141);
+    padding: 10px;
+  }
+  .nav-links {
+    flex-direction: column;
+  }
+  .hidden--mobile {
+    display: none;
+  }
+  .logo {
+    display: flex;
+    color: rgb(8, 141, 141);
+    font-size: 40px;
+
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+  }
+}
