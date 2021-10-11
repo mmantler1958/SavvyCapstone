@@ -76,20 +76,30 @@ nav ul {
   flex-direction: row;
   justify-content: space-between;
 }
-.footer {
-  position: absolute;
-  bottom: 30px;
-  width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  font-size: 18px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  /* justify-content: space-between; */
-  gap: 20px;
-  text-decoration: none;
+.foot a {
+   text-decoration: none;
   color: rgb(8, 141, 141);
+}
+.foot a:hover {
+  text-decoration: underline;
+}
+.foot{
+  position: fixed;
+  width: 100%;
+/* margin:auto; */
+text-align: center;
+  bottom: 10px;
+  border: 2px solid rgb(8, 141, 141);
+  /* width: 100%;
+  margin: 0 auto; */
+
+  font-size: 18px;
+  /* display: flex; */
+  /* flex-direction: row; */
+  /* justify-content: center; */
+  /* justify-content: space-between; */
+  /* gap: 20px; */
+
   font-size: 30px;
 }
 .toggle {
@@ -97,23 +107,25 @@ nav ul {
   color: rgb(8, 141, 141);
   font-size: 30px;
 }
-footer a:hover {
-  text-decoration: underline;
-}
-footer a {
-  text-decoration: none;
-  color: rgb(8, 141, 141);
-}
-#bar {
-  display: none;
-}
+
+
+
+
 h1 {
   margin-left: 10px;
   color: rgb(8, 141, 141);
   display: block;
 }
+.fa-bars {
+  display: none;
+}
+.home {
+max-height: 83vh;
+overflow: auto;
+}
 @media (max-width: 414px) {
-  #bar {
+  .fa-bars {
+
     font-size: 30px;
     display: block;
     color: rgb(8, 141, 141);

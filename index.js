@@ -4,7 +4,7 @@ import Navigo from "navigo";
 import { capitalize } from "lodash";
 
 const router = new Navigo(window.location.origin);
-console.log(state);
+
 router.on("/", () => render(state.Home)).resolve();
 router
   .on({
