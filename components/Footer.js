@@ -1,4 +1,5 @@
+import Form from "../store/Form";
 export default () => `
  <footer class="foot">
-      <a href="./contact.html"  >Contact Us</a>
+      <a href="${Form.page}" >Contact Us</a>
     </footer>`;
