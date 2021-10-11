@@ -2,11 +2,15 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+   margin-left: 20px;
+  margin-right: 20px;
 }
 
 body {
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
+
+
 }
 .burger-color {
   color: teal;
@@ -52,11 +56,11 @@ nav li a:hover {
 }
 form {
 }
-#contactUs {
+/* #contactUs {
   border: 2px solid teal;
   width: 50%;
-}
-#contactUs * {
+} */
+/* #contactUs * {
   /* display: none; */
   display: block;
 
@@ -65,7 +69,7 @@ form {
 
   font-size: 30px;
   color: rgb(8, 141, 141);
-}
+} */
 
 nav a {
   text-decoration: none;
@@ -75,6 +79,11 @@ nav ul {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+}
+nav ul li a {
+    text-decoration: none;
+  color: rgb(8, 141, 141);
 }
 .foot a {
    text-decoration: none;
@@ -120,8 +129,23 @@ h1 {
   display: none;
 }
 .home {
+  margin-top: 20px;
 max-height: 83vh;
-overflow: auto;
+overflow:auto;
+color: rgb(8, 141, 141);
+}
+.home li {
+  list-style: disc;
+}
+.home a {
+  color:rgb(8, 141, 141)
+}
+#contact {
+  color:rgb(8, 141, 141);
+
+}
+#contact h3 {
+	text-align: center;
 }
 @media (max-width: 414px) {
   .fa-bars {
