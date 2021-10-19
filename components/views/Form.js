@@ -1,4 +1,6 @@
 export default () => `
+<div id="contact">
+<h3>Contact Form</h3>
       <form id="contactUs" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/f/xpzkbyoa" method="post">
   <fieldset id="fs-frm-inputs">
 
@@ -17,4 +19,5 @@ export default () => `
   </fieldset>
   <input type="submit" value="Submit">
 </form>
+</div>
 `;
