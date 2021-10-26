@@ -32,7 +32,9 @@ nav {
   flex-flow: row; */
 
 }
-
+#searchMed{
+  width:75rem;
+}
 ul {
   list-style-type: none;
   margin: 25px;
@@ -72,13 +74,13 @@ form {
 } */
 /* #contactUs * {
   /* display: none; */
-  display: block;
+  /* display: block;
 
-  width: 50%;
+  width: 50%; */
   /* margin: auto; */
 
-  font-size: 30px;
-  color: rgb(8, 141, 141);
+  /* font-size: 30px; */
+  /* color: rgb(8, 141, 141); */
 } */
 
 nav a {
@@ -106,7 +108,7 @@ nav ul li a {
   text-decoration: underline;
 }
 .foot{
-   position: absolute;
+   position: relative;
   width: 100%;
   /* overflow:scroll; */
 /* margin:auto; */
@@ -161,9 +163,17 @@ color: rgb(8, 141, 141);
 .home a {
   color:rgb(8, 141, 141)
 }
-#contact {
+#contact * {
   color:rgb(8, 141, 141);
 
+}
+
+#contact{
+  display: flex;
+  flex-direction: column;
+}
+.hideList {
+  display: block;
 }
 #contact h3 {
 

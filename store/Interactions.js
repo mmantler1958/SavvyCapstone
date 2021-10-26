@@ -1,4 +1,5 @@
 export default {
   header: "Drug Interactions",
-  page: "Interactions"
+  page: "Interactions",
+  Meds: ""
 };

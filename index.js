@@ -2,13 +2,105 @@ import { Footer, Main, Nav } from "./components";
 import * as state from "./store";
 import Navigo from "navigo";
 import { capitalize } from "lodash";
+import axios from "axios";
+import dotenv from "dotenv";
+import { Interactions } from "./components/views";
+let medList = [];
+let searchDone = false;
+dotenv.config();
 
 const router = new Navigo(window.location.origin);
 //*********************** */
 // USE ROUTER.HOOKS
 //********************* */
 
-router.on("/", () => render(state.Home)).resolve();
+router.hooks({
+  before: (done, params) => {
+    const page =
+      // eslint-disable-next-line no-prototype-builtins
+      params && params.hasOwnProperty("page")
+        ? capitalize(params.page)
+        : "Home";
+    if (page === "Home") {
+      axios
+        .get(
+          `https://api.openweathermap.org/data/2.5/weather?appid=${process.env.OPEN_WEATHER_MAP_API_KEY}&q=st.%20louis`
+        )
+        .then(response => {
+          state.Home.weather = {};
+          state.Home.weather.city = response.data.name;
+          state.Home.weather.temp = response.data.main.temp;
+          state.Home.weather.feelsLike = response.data.main.feels_like;
+          state.Home.weather.description = response.data.weather[0].main;
+          done();
+        })
+        .catch(err => console.log(err));
+    }
+    if (page === "Interactions") {
+      console.log("start interactions");
+      searchDone = false;
+      axios
+        .get("https://rxnav.nlm.nih.gov/REST/RxTerms/allconcepts.json")
+        .then(response => {
+          const { minConceptGroup } = response.data;
+          const { minConcept } = minConceptGroup;
+          medList = [...minConcept];
+
+          console.log(medList);
+
+          let medMatchesHTML = "";
+          medList.forEach(med => {
+            medMatchesHTML += `<li>${med.fullName.toUpperCase()}</li>`;
+          });
+          state.Interactions.Meds = medMatchesHTML;
+          searchDone = true;
+        });
+
+      // .then(response => {
+      //   const { minConceptGroup } = response.data;
+      //   const { minConcept } = minConceptGroup;
+      //   medList = [...minConcept];
+      // let medMatchesHTML = "";
+      // medList.forEach(med => {
+      //   medMatchesHTML += `<li>${med.fullName.toUpperCase()}</li>`;
+      // });
+      // state.Interactions.MedList = medMatchesHTML;
+      // medMatches.innerHTML = medMatchesHTML;
+      // console.log(medList);
+      // let x = medList.filter(med => med.fullName.includes("venla"));
+      // let x = medlist.find(med => med.rxcui = "2045")
+      // x.forEach(d => console.log(d));
+
+      // console.log("end");
+      // const List = minConcept.map(drug => {
+      //   //   // console.log(drug.fullName, drug.rxcui);
+
+      //   return `{"rxcui": "${drug.rxcui}", "fullname":"${drug.fullName}" }`;
+      // });
+
+      // state.Interactions = [];
+
+      // state.Interactions.MedList = List;
+      //console.log(List.find(med => med.rxcui === 2045404));
+      // console.log(List); //["2045404"]
+
+      //   done();
+      // })
+      // .catch(err => console.log(err));
+    }
+    // if (page === "Pizza") {
+    //   axios
+    //     .get(`${process.env.PIZZA_PLACE_API_URL}`)
+    //     .then(response => {
+    //       state.Pizza.pizzas = response.data;
+    //       done();
+    //     })
+    //     .catch(error => {
+    //       console.log("It puked", error);
+    //     });
+    // }
+  }
+});
 router
   .on({
     "/": () => render(state.Home),
@@ -18,26 +110,53 @@ router
     }
   })
   .resolve();
+
 function render(st) {
   document.querySelector("#root").innerHTML = `
-
-  ${Nav(state.Links)}
+   ${Nav(state.Links)}
   ${Main(st)}
   ${Footer()}
   `;
-  // router.updatePageLinks();
+
+  router.updatePageLinks();
+
+  addEventListeners(st);
 }
-//
-document.querySelector(".fa-bars").addEventListener("click", () => {
-  document.querySelector("nav > ul").classList.toggle("hidden--mobile");
-});
-// Adding NIH API call to get all medicine names
-const getMeds = async () => {
-  const MD = await fetch(
-    "https://rxnav.nlm.nih.gov/REST/RxTerms/allconcepts.json"
+
+// add menu toggle to bars icon in nav bar
+function addEventListeners(st) {
+  // add event listeners to Nav items for navigation
+  document.querySelectorAll("nav a").forEach(navLink =>
+    navLink.addEventListener("click", event => {
+      event.preventDefault();
+      render(state[event.target.title]);
+    })
   );
-  const meds = await MD.json();
-  console.log(meds);
-  return meds;
-};
-// getMeds().then(data => console.log(data));
+
+  document
+    .querySelector(".fa-bars")
+    .addEventListener("click", () =>
+      document.querySelector("nav > ul").classList.toggle("hidden--mobile")
+    );
+
+  // Add event listener for input with id 'searchMed'
+  document.querySelector("#inputMed").addEventListener("keyup", e => {
+    let medMatchesHTML = "";
+    let entry = e.target.value.toUpperCase();
+    console.log(entry);
+  });
+  let medMatchesHTML = "";
+  let entry = e.target.value.toUpperCase();
+  console.log(entry);
+  console.log(medList);
+  let matches = medList.filter(med =>
+    med.fullName.toUpperCase().includes(entry)
+  );
+
+  //   let list = document.querySelector("#list");
+  //   let listing = matches.map(name => `<li>${matches.fullName}</li>`).join("");
+  //   list.innerHTML = listing;
+  //   console.log(list.innerHTML);
+  // state.Interactions.medList = medMatchesHTML;
+  // });
+}
