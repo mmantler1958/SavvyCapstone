@@ -6,7 +6,7 @@ import axios from "axios";
 import dotenv from "dotenv";
 import { Interactions } from "./components/views";
 let medList = [];
-let searchDone = false;
+// let searchDone = false;
 dotenv.config();
 
 const router = new Navigo(window.location.origin);
@@ -36,70 +36,50 @@ router.hooks({
         })
         .catch(err => console.log(err));
     }
-    if (page === "Interactions") {
-      console.log("start interactions");
-      searchDone = false;
-      axios
-        .get("https://rxnav.nlm.nih.gov/REST/RxTerms/allconcepts.json")
-        .then(response => {
-          const { minConceptGroup } = response.data;
-          const { minConcept } = minConceptGroup;
-          medList = [...minConcept];
 
-          console.log(medList);
+    // .then(response => {
+    //   const { minConceptGroup } = response.data;
+    //   const { minConcept } = minConceptGroup;
+    //   medList = [...minConcept];
+    // let medMatchesHTML = "";
+    // medList.forEach(med => {
+    //   medMatchesHTML += `<li>${med.fullName.toUpperCase()}</li>`;
+    // });
+    // state.Interactions.MedList = medMatchesHTML;
+    // medMatches.innerHTML = medMatchesHTML;
+    // console.log(medList);
+    // let x = medList.filter(med => med.fullName.includes("venla"));
+    // let x = medlist.find(med => med.rxcui = "2045")
+    // x.forEach(d => console.log(d));
 
-          let medMatchesHTML = "";
-          medList.forEach(med => {
-            medMatchesHTML += `<li>${med.fullName.toUpperCase()}</li>`;
-          });
-          state.Interactions.Meds = medMatchesHTML;
-          searchDone = true;
-        });
+    // console.log("end");
+    // const List = minConcept.map(drug => {
+    //   //   // console.log(drug.fullName, drug.rxcui);
 
-      // .then(response => {
-      //   const { minConceptGroup } = response.data;
-      //   const { minConcept } = minConceptGroup;
-      //   medList = [...minConcept];
-      // let medMatchesHTML = "";
-      // medList.forEach(med => {
-      //   medMatchesHTML += `<li>${med.fullName.toUpperCase()}</li>`;
-      // });
-      // state.Interactions.MedList = medMatchesHTML;
-      // medMatches.innerHTML = medMatchesHTML;
-      // console.log(medList);
-      // let x = medList.filter(med => med.fullName.includes("venla"));
-      // let x = medlist.find(med => med.rxcui = "2045")
-      // x.forEach(d => console.log(d));
+    //   return `{"rxcui": "${drug.rxcui}", "fullname":"${drug.fullName}" }`;
+    // });
 
-      // console.log("end");
-      // const List = minConcept.map(drug => {
-      //   //   // console.log(drug.fullName, drug.rxcui);
+    // state.Interactions = [];
 
-      //   return `{"rxcui": "${drug.rxcui}", "fullname":"${drug.fullName}" }`;
-      // });
+    // state.Interactions.MedList = List;
+    //console.log(List.find(med => med.rxcui === 2045404));
+    // console.log(List); //["2045404"]
 
-      // state.Interactions = [];
-
-      // state.Interactions.MedList = List;
-      //console.log(List.find(med => med.rxcui === 2045404));
-      // console.log(List); //["2045404"]
-
-      //   done();
-      // })
-      // .catch(err => console.log(err));
-    }
-    // if (page === "Pizza") {
-    //   axios
-    //     .get(`${process.env.PIZZA_PLACE_API_URL}`)
-    //     .then(response => {
-    //       state.Pizza.pizzas = response.data;
-    //       done();
-    //     })
-    //     .catch(error => {
-    //       console.log("It puked", error);
-    //     });
-    // }
+    //   done();
+    // })
+    // .catch(err => console.log(err));
   }
+  // if (page === "Pizza") {
+  //   axios
+  //     .get(`${process.env.PIZZA_PLACE_API_URL}`)
+  //     .then(response => {
+  //       state.Pizza.pizzas = response.data;
+  //       done();
+  //     })
+  //     .catch(error => {
+  //       console.log("It puked", error);
+  //     });
+  // }
 });
 router
   .on({
@@ -126,6 +106,7 @@ function render(st) {
 // add menu toggle to bars icon in nav bar
 function addEventListeners(st) {
   // add event listeners to Nav items for navigation
+  let medList = [];
   document.querySelectorAll("nav a").forEach(navLink =>
     navLink.addEventListener("click", event => {
       event.preventDefault();
@@ -140,23 +121,36 @@ function addEventListeners(st) {
     );
 
   // Add event listener for input with id 'searchMed'
-  document.querySelector("#inputMed").addEventListener("keyup", e => {
-    let medMatchesHTML = "";
-    let entry = e.target.value.toUpperCase();
-    console.log(entry);
-  });
-  let medMatchesHTML = "";
-  let entry = e.target.value.toUpperCase();
-  console.log(entry);
-  console.log(medList);
-  let matches = medList.filter(med =>
-    med.fullName.toUpperCase().includes(entry)
-  );
 
-  //   let list = document.querySelector("#list");
-  //   let listing = matches.map(name => `<li>${matches.fullName}</li>`).join("");
-  //   list.innerHTML = listing;
-  //   console.log(list.innerHTML);
-  // state.Interactions.medList = medMatchesHTML;
-  // });
+  if (st.page === "Interactions") {
+    let theList = document.querySelector("#list");
+    axios
+      .get("https://rxnav.nlm.nih.gov/REST/RxTerms/allconcepts.json")
+      .then(response => {
+        const { minConceptGroup } = response.data;
+        const { minConcept } = minConceptGroup;
+        medList = [...minConcept];
+        medList.forEach(med => {
+          med.fullName = med.fullName.toUpperCase();
+        });
+      });
+    console.log("start interactions");
+    console.log(medList);
+    document.querySelector("#inputMed").addEventListener("keyup", e => {
+      let entry = e.target.value.toUpperCase();
+      console.log(entry);
+      let searchResult = [];
+      medList.find(med => {
+        if (med.fullName.includes(entry)) {
+          searchResult.push(med);
+        }
+      });
+      console.log(searchResult);
+      let theList1 = "";
+      searchResult.forEach(med => {
+        theList1 = theList1 + `<li>${med.fullName}</li>`;
+      });
+      theList.innerHTML = theList1;
+    });
+  }
 }
