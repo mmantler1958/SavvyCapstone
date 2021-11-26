@@ -1,5 +1,8 @@
-import Form from "../store/Form";
-export default () => `
- <footer class="foot">
-      <a href="${Form.page}" >Contact Us</a>
-    </footer>`;
+import html from "html-literal";
+import ContactUs from "../store/ContactUs";
+export default () =>
+  html`
+    <footer class="footer">
+      <p>MedMinder | Copyright 2021</p>
+    </footer>
+  `;

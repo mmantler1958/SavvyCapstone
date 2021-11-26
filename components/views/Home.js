@@ -27,5 +27,5 @@ Taking your medicine as prescribed or medication adherence is important for cont
 <li>When travelling, be certain to bring enough of your medication, plus a few days extra, in case your return is delayed.</li>
 <li>If you’re flying, keep your medication in your carry-on bag to avoid lost luggage. Temperatures inside the cargo hold could damage your medication.</li>
  </ul>
- <a href="https://www.fda.gov/drugs/special-features/why-you-need-take-your-medications-prescribed-or-instructed" target="_blank">Credit</a>
+ <a id="credits" href="https://www.fda.gov/drugs/special-features/why-you-need-take-your-medications-prescribed-or-instructed" target="_blank">Credits</a>
 </div>`;
